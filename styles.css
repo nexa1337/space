@@ -1895,7 +1895,8 @@ html.dark-mode .checkbox-item input[type="checkbox"] {
   }
 
   .theme-toggle:not(.mobile-theme-toggle) {
-    display: none;
+    display: flex;
+    margin-left: auto;
   }
 
   .mobile-theme-toggle-container {
@@ -2132,12 +2133,21 @@ html.dark-mode .localization-title {
   backdrop-filter: blur(20px);
   border: 1px solid rgba(106, 121, 250, 0.3);
   border-radius: 20px;
-  padding: 3rem;
-  max-width: 500px;
+  padding: 2rem;
+  max-width: 90%;
   width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
   box-shadow: 0 20px 60px rgba(106, 121, 250, 0.2);
   position: relative;
   animation: slideUp 0.4s ease;
+}
+
+@media (min-width: 769px) {
+  .popup-modal {
+    max-width: 500px;
+    padding: 3rem;
+  }
 }
 
 html.dark-mode .popup-modal {
