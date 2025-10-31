@@ -608,7 +608,12 @@ contactForm.addEventListener('submit', function(e) {
   const email = document.getElementById('email').value;
   const whatsapp = document.getElementById('whatsapp').value;
   const country = document.getElementById('country').value;
-  const projectType = document.getElementById('projectType').value;
+  
+  // Get selected project types
+  const projectTypeSelect = document.getElementById('projectType');
+  const selectedOptions = Array.from(projectTypeSelect.selectedOptions);
+  const projectTypes = selectedOptions.map(option => option.text).join(', ');
+  
   const message = document.getElementById('message').value;
   
   // Create WhatsApp message
@@ -618,7 +623,7 @@ Full Name: ${fullName}
 Email: ${email}
 WhatsApp: ${whatsapp}
 Country: ${country}
-Project Type: ${projectType}
+Project Type(s): ${projectTypes}
 Message: ${message}`;
   
   // Encode message for URL

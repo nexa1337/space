@@ -53,10 +53,12 @@
                     <a href="#projects">Projects</a>
                     <a href="#pricing">Pricing</a>
                     <a href="#contact">Contact</a>
-                <button class="theme-toggle mobile-theme-toggle" id="mobileThemeToggle" aria-label="Toggle dark mode">
-                    <i class="fas fa-moon"></i>
-                </button>
-            </div>
+                    <div class="mobile-theme-toggle-container">
+                        <button class="theme-toggle mobile-theme-toggle" id="mobileThemeToggle" aria-label="Toggle dark mode">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                </div>
         </div>
     </nav>
 
@@ -885,7 +887,7 @@
                     </div>
                 </div>
                 <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d45060306.91979326!2d-68.71773924999997!3d46.42366899999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x685ace81736fce8b%3A0xd3258392e9519475!2sN%20E%20X%20A%201337!5e0!3m2!1sen!2sma!4v1761315778436!5m2!1sen!2sma" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1d45060306.91979326!2d-68.71773924999997!3d46.42366899999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x685ace81736fce8b%3A0xd3258392e9519475!2sN%20E%20X%20A%201337!5e0!3m2!1sen!2sma!4v1761315778436!5m2!1sen!2sma" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
@@ -1025,8 +1027,8 @@
                         </div>
                         <div class="form-group">
                             <label for="projectType">Project Type *</label>
-                            <select id="projectType" class="form-control" required>
-                                <option value="">Select project type</option>
+                            <select id="projectType" class="form-control" required multiple>
+                                <option value="">Select project type(s)</option>
                                 <option value="web-development">Web Development</option>
                                 <option value="ai-solutions">AI Solutions</option>
                                 <option value="branding">Branding</option>
@@ -1034,6 +1036,7 @@
                                 <option value="automation">Automation</option>
                                 <option value="other">Other</option>
                             </select>
+                            <small class="form-text">Hold Ctrl (Cmd on Mac) to select multiple options</small>
                         </div>
                     </div>
                     <div class="form-group">
