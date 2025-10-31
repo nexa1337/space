@@ -1098,6 +1098,40 @@ input:checked + .slider:before {
   gap: 1rem;
 }
 
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.checkbox-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary);
+  cursor: pointer;
+}
+
+.checkbox-item label {
+  margin-bottom: 0;
+  font-weight: normal;
+  cursor: pointer;
+  color: var(--dark);
+}
+
+html.dark-mode .checkbox-item label {
+  color: var(--dark);
+}
+
+html.dark-mode .checkbox-item input[type="checkbox"] {
+  accent-color: var(--primary);
+}
+
 .btn-whatsapp {
   background-color: #25D366;
   color: var(--white);
@@ -1163,6 +1197,19 @@ input:checked + .slider:before {
   .project-popup-thumbnails img {
     width: 60px;
     height: 60px;
+  }
+  
+  .checkbox-group {
+    gap: 0.5rem;
+  }
+  
+  .checkbox-item {
+    gap: 0.4rem;
+  }
+  
+  .checkbox-item input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
   }
 }
 

@@ -610,9 +610,14 @@ contactForm.addEventListener('submit', function(e) {
   const country = document.getElementById('country').value;
   
   // Get selected project types
-  const projectTypeSelect = document.getElementById('projectType');
-  const selectedOptions = Array.from(projectTypeSelect.selectedOptions);
-  const projectTypes = selectedOptions.map(option => option.text).join(', ');
+  const projectTypeCheckboxes = document.querySelectorAll('input[name="projectType"]:checked');
+  const projectTypes = Array.from(projectTypeCheckboxes).map(checkbox => checkbox.value).join(', ');
+  
+  // Validate that at least one project type is selected
+  if (projectTypes === '') {
+    alert('Please select at least one project type.');
+    return;
+  }
   
   const message = document.getElementById('message').value;
   

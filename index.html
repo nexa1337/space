@@ -887,7 +887,7 @@
                     </div>
                 </div>
                 <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1d45060306.91979326!2d-68.71773924999997!3d46.42366899999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x685ace81736fce8b%3A0xd3258392e9519475!2sN%20E%20X%20A%201337!5e0!3m2!1sen!2sma!4v1761315778436!5m2!1sen!2sma" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d31456.368893112613!2d-6.828826273383477!3d34.03249344091809!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda76b146a4caac9%3A0xdc0f711f384b0c52!2sN%20E%20X%20A%201337%20-%20Digital%20Agency!5e0!3m2!1sfr!2sma!4v1761904009010!5m2!1sfr!2sma" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
@@ -1026,17 +1026,33 @@
                             <input type="text" id="country" class="form-control" placeholder="Enter your country" required>
                         </div>
                         <div class="form-group">
-                            <label for="projectType">Project Type *</label>
-                            <select id="projectType" class="form-control" required multiple>
-                                <option value="">Select project type(s)</option>
-                                <option value="web-development">Web Development</option>
-                                <option value="ai-solutions">AI Solutions</option>
-                                <option value="branding">Branding</option>
-                                <option value="marketing">Marketing & Acquisition</option>
-                                <option value="automation">Automation</option>
-                                <option value="other">Other</option>
-                            </select>
-                            <small class="form-text">Hold Ctrl (Cmd on Mac) to select multiple options</small>
+                            <label>Project Type *</label>
+                            <div class="checkbox-group" id="projectType">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="web-development" name="projectType" value="Web Development">
+                                    <label for="web-development">Web Development</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="ai-solutions" name="projectType" value="AI Solutions">
+                                    <label for="ai-solutions">AI Solutions</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="branding" name="projectType" value="Branding">
+                                    <label for="branding">Branding</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="marketing" name="projectType" value="Marketing & Acquisition">
+                                    <label for="marketing">Marketing & Acquisition</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="automation" name="projectType" value="Automation">
+                                    <label for="automation">Automation</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="other" name="projectType" value="Other">
+                                    <label for="other">Other</label>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="form-group">
