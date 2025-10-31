@@ -417,3 +417,135 @@ faqQuestions.forEach((question) => {
     }
   })
 })
+
+// Project section functionality
+
+document.querySelector('.projects-cta .btn').addEventListener('click', function() {
+  // In a real implementation, this would navigate to a projects page
+  alert('All projects page would be shown here in a real implementation.')
+})
+
+// Project filtering functionality
+const filterButtons = document.querySelectorAll('.project-filters .filter-btn');
+const projectCards = document.querySelectorAll('.project-card');
+
+filterButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    // Remove active class from all buttons
+    filterButtons.forEach(btn => btn.classList.remove('active'));
+    // Add active class to clicked button
+    button.classList.add('active');
+    
+    const filter = button.getAttribute('data-filter');
+    
+    projectCards.forEach(card => {
+      if (filter === 'all' || card.getAttribute('data-category') === filter) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+});
+
+// Project popup functionality
+const projectPopup = document.getElementById('projectPopup');
+const projectPopupClose = document.getElementById('projectPopupClose');
+const viewProjectButtons = document.querySelectorAll('.view-project-btn');
+
+// Project data
+const projectData = {
+  1: {
+    title: "E-commerce Platform",
+    category: "Web Development",
+    description: "This comprehensive e-commerce platform was designed for a fashion retailer looking to expand their online presence. The solution features a modern, responsive design with seamless checkout experience, advanced product filtering, and integrated inventory management. The platform also includes analytics dashboards for real-time sales tracking and customer behavior insights.",
+    image: "img/Custom Websites.jpg",
+    client: "FashionForward Inc.",
+    duration: "4 months",
+    technologies: "React, Node.js, MongoDB, Stripe API"
+  },
+  2: {
+    title: "Corporate Identity",
+    category: "Branding",
+    description: "We developed a complete brand identity system for a fintech startup entering the competitive digital payments market. The project included logo design, color palette selection, typography guidelines, and brand applications across digital and print media. The cohesive visual identity helped establish trust and recognition in the marketplace.",
+    image: "img/Brand Identity & Design System.jpg",
+    client: "PayTech Solutions",
+    duration: "2 months",
+    technologies: "Adobe Creative Suite, Figma, Brand Guidelines"
+  },
+  3: {
+    title: "Customer Support AI",
+    category: "AI Solutions",
+    description: "This intelligent chatbot system was implemented for a SaaS company to handle customer inquiries 24/7. Using natural language processing and machine learning, the AI assistant can understand and respond to complex technical questions with 92% accuracy. The system integrates with the company's knowledge base and CRM to provide personalized responses and escalate issues when needed.",
+    image: "img/AI Chatbots & Assistants.jpg",
+    client: "CloudSoft Corp",
+    duration: "3 months",
+    technologies: "Python, TensorFlow, Dialogflow, REST API"
+  },
+  4: {
+    title: "Conversion Optimized Landing Page",
+    category: "Web Development",
+    description: "We designed and developed a high-converting landing page for a software company's product launch. Through A/B testing and user behavior analysis, we optimized every element from headline copy to call-to-action placement. The result was a 120% increase in signups and a 75% improvement in conversion rate compared to their previous page.",
+    image: "img/Landing Pages & CRO.jpg",
+    client: "SoftLaunch Ltd",
+    duration: "6 weeks",
+    technologies: "HTML/CSS, JavaScript, A/B Testing Tools"
+  },
+  5: {
+    title: "Social Media Campaign",
+    category: "Branding",
+    description: "This comprehensive social media strategy was created for a food delivery service to increase brand awareness and drive app downloads. The campaign included content creation, influencer partnerships, targeted advertising, and community engagement across Instagram, Facebook, and TikTok. The campaign generated over 2 million impressions and increased app downloads by 300%.",
+    image: "img/Social Media Management.jpg",
+    client: "QuickEats Delivery",
+    duration: "3 months",
+    technologies: "Social Media Platforms, Analytics Tools, Content Creation"
+  },
+  6: {
+    title: "Workflow Automation",
+    category: "AI Solutions",
+    description: "We automated repetitive business processes for a consulting firm, saving over 20 hours per week across their organization. The solution included automated data entry, report generation, client onboarding workflows, and appointment scheduling. The system integrates with their existing CRM and project management tools for seamless operation.",
+    image: "img/Workflow Automation & AI Agents.jpg",
+    client: "ConsultPro Services",
+    duration: "2 months",
+    technologies: "Python, Zapier, REST API, Database Integration"
+  }
+};
+
+// Open popup with project details
+viewProjectButtons.forEach(button => {
+  button.addEventListener('click', function(e) {
+    e.preventDefault();
+    const projectId = this.getAttribute('data-project');
+    const project = projectData[projectId];
+    
+    if (project) {
+      // Populate popup with project data
+      document.getElementById('popupImage').src = project.image;
+      document.getElementById('popupImage').alt = project.title;
+      document.getElementById('popupCategory').textContent = project.category;
+      document.getElementById('popupTitle').textContent = project.title;
+      document.getElementById('popupDescription').textContent = project.description;
+      document.getElementById('popupClient').textContent = project.client;
+      document.getElementById('popupDuration').textContent = project.duration;
+      document.getElementById('popupTech').textContent = project.technologies;
+      
+      // Show popup
+      projectPopup.classList.add('active');
+      document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    }
+  });
+});
+
+// Close popup
+projectPopupClose.addEventListener('click', function() {
+  projectPopup.classList.remove('active');
+  document.body.style.overflow = 'auto'; // Enable scrolling
+});
+
+// Close popup when clicking outside content
+projectPopup.addEventListener('click', function(e) {
+  if (e.target === projectPopup) {
+    projectPopup.classList.remove('active');
+    document.body.style.overflow = 'auto'; // Enable scrolling
+  }
+});

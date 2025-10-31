@@ -38,6 +38,7 @@
 					<li><a href="#home">Home</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#services">Services</a></li>
+                        <li><a href="#projects">Projects</a></li>
                         <li><a href="#pricing">Pricing</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
@@ -47,10 +48,11 @@
                 </div>
             </div>
             <div class="mobile-menu" id="mobileMenu">
-                <a href="#about">About</a>
-                <a href="#services">Services</a>
-                <a href="#pricing">Pricing</a>
-                <a href="#contact">Contact</a>
+                    <a href="#about">About</a>
+                    <a href="#services">Services</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="#contact">Contact</a>
                 <button class="theme-toggle mobile-theme-toggle" id="mobileThemeToggle" aria-label="Toggle dark mode">
                     <i class="fas fa-moon"></i>
                 </button>
@@ -396,6 +398,147 @@
             </div>
         </div>
     </section>
+
+    <!-- Project Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2 class="section-title">Our Projects</h2>
+            <p class="section-subtitle">Discover our latest work and creative solutions</p>
+            
+            <!-- Category Filter -->
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="web">Web Development</button>
+                <button class="filter-btn" data-filter="branding">Branding</button>
+                <button class="filter-btn" data-filter="ai">AI Solutions</button>
+            </div>
+            
+            <div class="projects-grid">
+                <div class="project-card" data-category="web">
+                    <div class="project-image">
+                        <img src="img/Custom Websites.jpg" alt="Custom Website Project">
+                        <div class="project-overlay">
+                            <button class="view-project-btn" data-project="1">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">Web Development</span>
+                        <h3 class="project-title">E-commerce Platform</h3>
+                        <p class="project-description">A modern e-commerce solution with seamless user experience and advanced analytics.</p>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="branding">
+                    <div class="project-image">
+                        <img src="img/Brand Identity & Design System.jpg" alt="Brand Identity Project">
+                        <div class="project-overlay">
+                            <button class="view-project-btn" data-project="2">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">Branding</span>
+                        <h3 class="project-title">Corporate Identity</h3>
+                        <p class="project-description">Complete brand identity system for a tech startup with global aspirations.</p>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="ai">
+                    <div class="project-image">
+                        <img src="img/AI Chatbots & Assistants.jpg" alt="AI Chatbot Project">
+                        <div class="project-overlay">
+                            <button class="view-project-btn" data-project="3">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">AI Solutions</span>
+                        <h3 class="project-title">Customer Support AI</h3>
+                        <p class="project-description">Intelligent chatbot system that reduced response times by 80%.</p>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="web">
+                    <div class="project-image">
+                        <img src="img/Landing Pages & CRO.jpg" alt="Landing Page Project">
+                        <div class="project-overlay">
+                            <button class="view-project-btn" data-project="4">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">Web Development</span>
+                        <h3 class="project-title">Conversion Optimized Landing Page</h3>
+                        <p class="project-description">High-converting landing page that increased signup rates by 120%.</p>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="branding">
+                    <div class="project-image">
+                        <img src="img/Social Media Management.jpg" alt="Social Media Project">
+                        <div class="project-overlay">
+                            <button class="view-project-btn" data-project="5">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">Branding</span>
+                        <h3 class="project-title">Social Media Campaign</h3>
+                        <p class="project-description">Comprehensive social media strategy that grew followers by 300%.</p>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="ai">
+                    <div class="project-image">
+                        <img src="img/Workflow Automation & AI Agents.jpg" alt="Workflow Automation Project">
+                        <div class="project-overlay">
+                            <button class="view-project-btn" data-project="6">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">AI Solutions</span>
+                        <h3 class="project-title">Workflow Automation</h3>
+                        <p class="project-description">Automated business processes that saved 20+ hours per week.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="projects-cta">
+                <button class="btn btn-primary">View All Projects</button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Project Quick View Popup -->
+    <div class="project-popup-overlay" id="projectPopup">
+        <div class="project-popup">
+            <button class="popup-close" id="projectPopupClose">&times;</button>
+            <div class="project-popup-content">
+                <div class="project-popup-image">
+                    <img src="" alt="" id="popupImage">
+                </div>
+                <div class="project-popup-details">
+                    <span class="project-popup-category" id="popupCategory"></span>
+                    <h3 class="project-popup-title" id="popupTitle"></h3>
+                    <p class="project-popup-description" id="popupDescription"></p>
+                    <div class="project-popup-meta">
+                        <div class="meta-item">
+                            <strong>Client:</strong>
+                            <span id="popupClient">TechCorp Inc.</span>
+                        </div>
+                        <div class="meta-item">
+                            <strong>Duration:</strong>
+                            <span id="popupDuration">3 months</span>
+                        </div>
+                        <div class="meta-item">
+                            <strong>Technologies:</strong>
+                            <span id="popupTech">React, Node.js, MongoDB</span>
+                        </div>
+                    </div>
+                    <div class="project-popup-actions">
+                        <button class="btn btn-outline">View Case Study</button>
+                        <button class="btn btn-primary">Visit Website</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Added FAQ Section -->
     <section class="faq-section">
