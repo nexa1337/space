@@ -510,8 +510,13 @@
         <div class="project-popup">
             <button class="popup-close" id="projectPopupClose">&times;</button>
             <div class="project-popup-content">
-                <div class="project-popup-image">
-                    <img src="" alt="" id="popupImage">
+                <div class="project-popup-gallery">
+                    <div class="project-popup-image">
+                        <img src="" alt="" id="popupImage">
+                    </div>
+                    <div class="project-popup-thumbnails" id="popupThumbnails">
+                        <!-- Thumbnails will be populated by JavaScript -->
+                    </div>
                 </div>
                 <div class="project-popup-details">
                     <span class="project-popup-category" id="popupCategory"></span>
@@ -788,6 +793,9 @@
       </div>
 
     </div>
+    <div class="pricing-cta">
+      <p>Need a custom solution? <a href="#" id="contactUsLink" class="contact-us-link">Contact us</a> for a personalized quote.</p>
+    </div>
   </div>
 </section>
 
@@ -983,6 +991,60 @@
                 
                 <button class="btn btn-primary popup-cta">Get Digital Website</button>
                 <p class="popup-footer">Join 500+ businesses already growing with,</br> <b>N E X A <span style="color:#6a79fa;">1337</span></b></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Form Popup -->
+    <div class="contact-popup-overlay" id="contactPopup">
+        <div class="contact-popup">
+            <div class="contact-popup-header">
+                <h3>Request Custom Quote</h3>
+                <button class="contact-popup-close" id="contactPopupClose">&times;</button>
+            </div>
+            <div class="contact-popup-content">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="fullName">Full Name *</label>
+                        <input type="text" id="fullName" class="form-control" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="whatsapp">WhatsApp Number *</label>
+                            <input type="tel" id="whatsapp" class="form-control" placeholder="Enter your WhatsApp number" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="country">Country *</label>
+                            <input type="text" id="country" class="form-control" placeholder="Enter your country" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="projectType">Project Type *</label>
+                            <select id="projectType" class="form-control" required>
+                                <option value="">Select project type</option>
+                                <option value="web-development">Web Development</option>
+                                <option value="ai-solutions">AI Solutions</option>
+                                <option value="branding">Branding</option>
+                                <option value="marketing">Marketing & Acquisition</option>
+                                <option value="automation">Automation</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" class="form-control" rows="4" placeholder="Tell us about your project..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                        Send Via WhatsApp
+                    </button>
+                </form>
             </div>
         </div>
     </div>

@@ -459,7 +459,7 @@ const projectData = {
     title: "E-commerce Platform",
     category: "Web Development",
     description: "This comprehensive e-commerce platform was designed for a fashion retailer looking to expand their online presence. The solution features a modern, responsive design with seamless checkout experience, advanced product filtering, and integrated inventory management. The platform also includes analytics dashboards for real-time sales tracking and customer behavior insights.",
-    image: "img/Custom Websites.jpg",
+    images: ["img/Custom Websites.jpg", "img/Landing Pages & CRO.jpg", "img/Content Production.jpg"],
     client: "FashionForward Inc.",
     duration: "4 months",
     technologies: "React, Node.js, MongoDB, Stripe API"
@@ -468,7 +468,7 @@ const projectData = {
     title: "Corporate Identity",
     category: "Branding",
     description: "We developed a complete brand identity system for a fintech startup entering the competitive digital payments market. The project included logo design, color palette selection, typography guidelines, and brand applications across digital and print media. The cohesive visual identity helped establish trust and recognition in the marketplace.",
-    image: "img/Brand Identity & Design System.jpg",
+    images: ["img/Brand Identity & Design System.jpg", "img/Social Media Management.jpg", "img/Content Production.jpg"],
     client: "PayTech Solutions",
     duration: "2 months",
     technologies: "Adobe Creative Suite, Figma, Brand Guidelines"
@@ -477,7 +477,7 @@ const projectData = {
     title: "Customer Support AI",
     category: "AI Solutions",
     description: "This intelligent chatbot system was implemented for a SaaS company to handle customer inquiries 24/7. Using natural language processing and machine learning, the AI assistant can understand and respond to complex technical questions with 92% accuracy. The system integrates with the company's knowledge base and CRM to provide personalized responses and escalate issues when needed.",
-    image: "img/AI Chatbots & Assistants.jpg",
+    images: ["img/AI Chatbots & Assistants.jpg", "img/Workflow Automation & AI Agents.jpg", "img/Custom Websites.jpg"],
     client: "CloudSoft Corp",
     duration: "3 months",
     technologies: "Python, TensorFlow, Dialogflow, REST API"
@@ -486,7 +486,7 @@ const projectData = {
     title: "Conversion Optimized Landing Page",
     category: "Web Development",
     description: "We designed and developed a high-converting landing page for a software company's product launch. Through A/B testing and user behavior analysis, we optimized every element from headline copy to call-to-action placement. The result was a 120% increase in signups and a 75% improvement in conversion rate compared to their previous page.",
-    image: "img/Landing Pages & CRO.jpg",
+    images: ["img/Landing Pages & CRO.jpg", "img/Custom Websites.jpg", "img/Social Media Management.jpg"],
     client: "SoftLaunch Ltd",
     duration: "6 weeks",
     technologies: "HTML/CSS, JavaScript, A/B Testing Tools"
@@ -495,7 +495,7 @@ const projectData = {
     title: "Social Media Campaign",
     category: "Branding",
     description: "This comprehensive social media strategy was created for a food delivery service to increase brand awareness and drive app downloads. The campaign included content creation, influencer partnerships, targeted advertising, and community engagement across Instagram, Facebook, and TikTok. The campaign generated over 2 million impressions and increased app downloads by 300%.",
-    image: "img/Social Media Management.jpg",
+    images: ["img/Social Media Management.jpg", "img/Content Production.jpg", "img/Brand Identity & Design System.jpg"],
     client: "QuickEats Delivery",
     duration: "3 months",
     technologies: "Social Media Platforms, Analytics Tools, Content Creation"
@@ -504,7 +504,7 @@ const projectData = {
     title: "Workflow Automation",
     category: "AI Solutions",
     description: "We automated repetitive business processes for a consulting firm, saving over 20 hours per week across their organization. The solution included automated data entry, report generation, client onboarding workflows, and appointment scheduling. The system integrates with their existing CRM and project management tools for seamless operation.",
-    image: "img/Workflow Automation & AI Agents.jpg",
+    images: ["img/Workflow Automation & AI Agents.jpg", "img/AI Chatbots & Assistants.jpg", "img/Custom Websites.jpg"],
     client: "ConsultPro Services",
     duration: "2 months",
     technologies: "Python, Zapier, REST API, Database Integration"
@@ -520,7 +520,7 @@ viewProjectButtons.forEach(button => {
     
     if (project) {
       // Populate popup with project data
-      document.getElementById('popupImage').src = project.image;
+      document.getElementById('popupImage').src = project.images[0];
       document.getElementById('popupImage').alt = project.title;
       document.getElementById('popupCategory').textContent = project.category;
       document.getElementById('popupTitle').textContent = project.title;
@@ -528,6 +528,28 @@ viewProjectButtons.forEach(button => {
       document.getElementById('popupClient').textContent = project.client;
       document.getElementById('popupDuration').textContent = project.duration;
       document.getElementById('popupTech').textContent = project.technologies;
+      
+      // Populate thumbnails
+      const thumbnailsContainer = document.getElementById('popupThumbnails');
+      thumbnailsContainer.innerHTML = '';
+      project.images.forEach((image, index) => {
+        const thumbnail = document.createElement('img');
+        thumbnail.src = image;
+        thumbnail.alt = `${project.title} - Image ${index + 1}`;
+        thumbnail.className = 'thumbnail';
+        if (index === 0) {
+          thumbnail.classList.add('active');
+        }
+        thumbnail.addEventListener('click', function() {
+          document.getElementById('popupImage').src = image;
+          // Update active thumbnail
+          document.querySelectorAll('.thumbnail').forEach(thumb => {
+            thumb.classList.remove('active');
+          });
+          this.classList.add('active');
+        });
+        thumbnailsContainer.appendChild(thumbnail);
+      });
       
       // Show popup
       projectPopup.classList.add('active');
@@ -548,4 +570,73 @@ projectPopup.addEventListener('click', function(e) {
     projectPopup.classList.remove('active');
     document.body.style.overflow = 'auto'; // Enable scrolling
   }
+});
+
+// Contact form popup functionality
+const contactUsLink = document.getElementById('contactUsLink');
+const contactPopup = document.getElementById('contactPopup');
+const contactPopupClose = document.getElementById('contactPopupClose');
+const contactForm = document.getElementById('contactForm');
+
+// Open contact popup
+contactUsLink.addEventListener('click', function(e) {
+  e.preventDefault();
+  contactPopup.classList.add('active');
+  document.body.style.overflow = 'hidden'; // Prevent background scrolling
+});
+
+// Close contact popup
+contactPopupClose.addEventListener('click', function() {
+  contactPopup.classList.remove('active');
+  document.body.style.overflow = 'auto'; // Enable scrolling
+});
+
+// Close contact popup when clicking outside content
+contactPopup.addEventListener('click', function(e) {
+  if (e.target === contactPopup) {
+    contactPopup.classList.remove('active');
+    document.body.style.overflow = 'auto'; // Enable scrolling
+  }
+});
+
+// Handle form submission
+contactForm.addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  // Get form values
+  const fullName = document.getElementById('fullName').value;
+  const email = document.getElementById('email').value;
+  const whatsapp = document.getElementById('whatsapp').value;
+  const country = document.getElementById('country').value;
+  const projectType = document.getElementById('projectType').value;
+  const message = document.getElementById('message').value;
+  
+  // Create WhatsApp message
+  const whatsappMessage = `Hello, I'm interested in a custom project quote.
+  
+Full Name: ${fullName}
+Email: ${email}
+WhatsApp: ${whatsapp}
+Country: ${country}
+Project Type: ${projectType}
+Message: ${message}`;
+  
+  // Encode message for URL
+  const encodedMessage = encodeURIComponent(whatsappMessage);
+  
+  // WhatsApp URL (replace with your actual number)
+  const whatsappUrl = `https://wa.me/+212723242286?text=${encodedMessage}`;
+  
+  // Open WhatsApp in new tab
+  window.open(whatsappUrl, '_blank');
+  
+  // Close popup
+  contactPopup.classList.remove('active');
+  document.body.style.overflow = 'auto'; // Enable scrolling
+  
+  // Reset form
+  contactForm.reset();
+  
+  // Show success message (optional)
+  alert('Thank you! We will contact you shortly via WhatsApp.');
 });

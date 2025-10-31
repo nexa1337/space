@@ -866,6 +866,269 @@ input:checked + .slider:before {
   border-bottom: none;
 }
 
+.pricing-cta {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.contact-us-link {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.contact-us-link:hover {
+  text-decoration: underline;
+}
+
+/* Contact Form Popup */
+.contact-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.contact-popup-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.contact-popup {
+  background: var(--white);
+  border-radius: 15px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+
+.contact-popup-overlay.active .contact-popup {
+  transform: translateY(0);
+}
+
+.contact-popup-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--gray-light);
+}
+
+.contact-popup-header h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin: 0;
+}
+
+.contact-popup-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--gray);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.contact-popup-close:hover {
+  background: var(--gray-light);
+  color: var(--dark);
+}
+
+.contact-popup-content {
+  padding: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid var(--gray-light);
+  border-radius: 8px;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+
+.form-control::placeholder {
+  color: var(--gray);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.btn-whatsapp {
+  background-color: #25D366;
+  color: var(--white);
+  border: none;
+  padding: 0.875rem 2rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "Poppins", sans-serif;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-whatsapp:hover {
+  background-color: #128C7E;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+}
+
+@media (max-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .project-popup {
+    width: 95%;
+  }
+  
+  .project-popup-content {
+    padding: 1.5rem;
+  }
+  
+  .project-popup-image img {
+    height: 200px;
+  }
+  
+  .project-popup-title {
+    font-size: 1.5rem;
+  }
+  
+  .project-popup-meta {
+    grid-template-columns: 1fr;
+  }
+  
+  .project-popup-actions {
+    flex-direction: column;
+  }
+  
+  .project-popup-actions .btn {
+    width: 100%;
+  }
+  
+  .project-popup-thumbnails img {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-carousel-wrapper {
+    gap: 0.5rem;
+  }
+
+  .carousel-nav {
+    width: 35px;
+    height: 35px;
+    font-size: 0.9rem;
+  }
+
+  .carousel-prev {
+    left: -40px;
+  }
+
+  .carousel-next {
+    right: -40px;
+  }
+  
+  .project-image img {
+    height: 180px;
+  }
+  
+  .project-content {
+    padding: 1.25rem;
+  }
+  
+  .project-title {
+    font-size: 1.1rem;
+  }
+  
+  .scroll-to-top {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+    bottom: 1rem;
+    right: 1rem;
+  }
+  
+  .contact-popup {
+    width: 95%;
+  }
+  
+  .contact-popup-header {
+    padding: 1rem;
+  }
+  
+  .contact-popup-header h3 {
+    font-size: 1.25rem;
+  }
+  
+  .contact-popup-content {
+    padding: 1rem;
+  }
+  
+  .form-control {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
+  
+  .btn-whatsapp {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+}
+
 /* Localization Section */
 .localization {
   position: relative;
@@ -2284,6 +2547,33 @@ html.dark-mode .scroll-to-top:hover {
   object-fit: cover;
 }
 
+.project-popup-thumbnails {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+  padding: 0.5rem;
+}
+
+.project-popup-thumbnails img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.project-popup-thumbnails img.active {
+  border-color: var(--primary);
+  transform: scale(1.05);
+}
+
+.project-popup-thumbnails img:hover {
+  transform: scale(1.05);
+}
+
 .project-popup-category {
   display: inline-block;
   background: rgba(106, 121, 250, 0.1);
@@ -2336,36 +2626,6 @@ html.dark-mode .scroll-to-top:hover {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
-}
-
-@media (max-width: 768px) {
-  .project-popup {
-    width: 95%;
-  }
-  
-  .project-popup-content {
-    padding: 1.5rem;
-  }
-  
-  .project-popup-image img {
-    height: 200px;
-  }
-  
-  .project-popup-title {
-    font-size: 1.5rem;
-  }
-  
-  .project-popup-meta {
-    grid-template-columns: 1fr;
-  }
-  
-  .project-popup-actions {
-    flex-direction: column;
-  }
-  
-  .project-popup-actions .btn {
-    width: 100%;
-  }
 }
 
 @media (max-width: 1024px) {
@@ -2489,6 +2749,32 @@ html.dark-mode .scroll-to-top:hover {
     font-size: 1rem;
     bottom: 1rem;
     right: 1rem;
+  }
+  
+  .contact-popup {
+    width: 95%;
+  }
+  
+  .contact-popup-header {
+    padding: 1rem;
+  }
+  
+  .contact-popup-header h3 {
+    font-size: 1.25rem;
+  }
+  
+  .contact-popup-content {
+    padding: 1rem;
+  }
+  
+  .form-control {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
+  
+  .btn-whatsapp {
+    padding: 0.75rem;
+    font-size: 0.9rem;
   }
 }
 
