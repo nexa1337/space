@@ -1099,61 +1099,9 @@ input:checked + .slider:before {
 }
 
 .checkbox-group {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 0.75rem;
-}
-
-.checkbox-item {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.checkbox-item input[type="checkbox"] {
-  width: 18px;
-  height: 18px;
-  accent-color: var(--primary);
-  cursor: pointer;
-}
-
-.checkbox-item label {
-  margin-bottom: 0;
-  font-weight: normal;
-  cursor: pointer;
-  color: var(--dark);
-}
-
-html.dark-mode .checkbox-item label {
-  color: var(--dark);
-}
-
-html.dark-mode .checkbox-item input[type="checkbox"] {
-  accent-color: var(--primary);
-}
-
-.btn-whatsapp {
-  background-color: #25D366;
-  color: var(--white);
-  border: none;
-  padding: 0.875rem 2rem;
-  border-radius: 50px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-family: "Poppins", sans-serif;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-}
-
-.btn-whatsapp:hover {
-  background-color: #128C7E;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
 }
 
 @media (max-width: 768px) {
@@ -1200,11 +1148,14 @@ html.dark-mode .checkbox-item input[type="checkbox"] {
   }
   
   .checkbox-group {
+    grid-template-columns: 1fr;
     gap: 0.5rem;
   }
   
   .checkbox-item {
     gap: 0.4rem;
+}
+
   }
   
   .checkbox-item input[type="checkbox"] {
@@ -1280,6 +1231,35 @@ html.dark-mode .checkbox-item input[type="checkbox"] {
 }
 
 /* Localization Section */
+.project-popup-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.meta-item strong {
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.meta-item span {
+  color: var(--gray);
+  font-size: 0.95rem;
+}
+
+.checkbox-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
 .localization {
   position: relative;
   background: #0a0a1a;
@@ -1999,6 +1979,15 @@ html.dark-mode .checkbox-item input[type="checkbox"] {
   .project-popup-thumbnails img {
     width: 70px;
     height: 70px;
+  }
+  
+  .checkbox-item {
+    gap: 0.4rem;
+  }
+  
+  .checkbox-item input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
   }
 }
 
@@ -2798,9 +2787,9 @@ html.dark-mode .scroll-to-top:hover {
 
 .project-popup-meta {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: 1fr 1fr;
   gap: 1rem;
-  margin-bottom: 2rem;
+  margin: 1.5rem 0;
 }
 
 .meta-item {
@@ -2810,8 +2799,8 @@ html.dark-mode .scroll-to-top:hover {
 }
 
 .meta-item strong {
-  color: var(--dark);
   font-weight: 600;
+  color: var(--dark);
 }
 
 .meta-item span {

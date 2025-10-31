@@ -33,6 +33,13 @@
                     <span></span>
                 </button>
                 <div id="about" class="logo">N E X A <span style="color:#6a79fa;">1337</span></div>
+                <div class="nav-links">
+                    <a href="#about">About</a>
+                    <a href="#services">Services</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="#contact">Contact</a>
+                </div>
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
                     <i class="fas fa-moon"></i>
                 </button>
@@ -549,8 +556,20 @@
                             <span id="popupClient">TechCorp Inc.</span>
                         </div>
                         <div class="meta-item">
-                            <strong>Duration:</strong>
-                            <span id="popupDuration">3 months</span>
+                            <strong>Sales:</strong>
+                            <span id="popupSales">120+</span>
+                        </div>
+                        <div class="meta-item">
+                            <strong>Delivery:</strong>
+                            <span id="popupDelivery">2-4 weeks</span>
+                        </div>
+                        <div class="meta-item">
+                            <strong>Revisions:</strong>
+                            <span id="popupRevisions">3</span>
+                        </div>
+                        <div class="meta-item">
+                            <strong>What's Included:</strong>
+                            <span id="popupIncluded">Full project, Support, Documentation</span>
                         </div>
                         <div class="meta-item">
                             <strong>Technologies:</strong>
@@ -558,7 +577,7 @@
                         </div>
                     </div>
                     <div class="project-popup-actions">
-                        <button class="btn btn-outline">View Case Study</button>
+                        <button class="btn btn-outline" id="buyViaWhatsapp">Buy Via Whatsapp</button>
                         <button class="btn btn-primary">Visit Website</button>
                     </div>
                 </div>
@@ -1048,29 +1067,74 @@
                             <label>Project Type *</label>
                             <div class="checkbox-group" id="projectType">
                                 <div class="checkbox-item">
-                                    <input type="checkbox" id="web-development" name="projectType" value="Web Development">
-                                    <label for="web-development">Web Development</label>
+                                    <input type="checkbox" id="ai-chatbots" name="projectType" value="AI Chatbots & Assistants">
+                                    <label for="ai-chatbots">AI Chatbots & Assistants</label>
                                 </div>
                                 <div class="checkbox-item">
-                                    <input type="checkbox" id="ai-solutions" name="projectType" value="AI Solutions">
-                                    <label for="ai-solutions">AI Solutions</label>
+                                    <input type="checkbox" id="workflow-automation" name="projectType" value="Workflow Automation & AI Agents">
+                                    <label for="workflow-automation">Workflow Automation & AI Agents</label>
                                 </div>
                                 <div class="checkbox-item">
-                                    <input type="checkbox" id="branding" name="projectType" value="Branding">
-                                    <label for="branding">Branding</label>
+                                    <input type="checkbox" id="custom-websites" name="projectType" value="Custom Websites">
+                                    <label for="custom-websites">Custom Websites</label>
                                 </div>
                                 <div class="checkbox-item">
-                                    <input type="checkbox" id="marketing" name="projectType" value="Marketing & Acquisition">
-                                    <label for="marketing">Marketing & Acquisition</label>
+                                    <input type="checkbox" id="landing-pages" name="projectType" value="Landing Pages & CRD">
+                                    <label for="landing-pages">Landing Pages & CRD</label>
                                 </div>
                                 <div class="checkbox-item">
-                                    <input type="checkbox" id="automation" name="projectType" value="Automation">
-                                    <label for="automation">Automation</label>
+                                    <input type="checkbox" id="social-media" name="projectType" value="Social Media Management">
+                                    <label for="social-media">Social Media Management</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="media-buying" name="projectType" value="Media Buying (Ads)">
+                                    <label for="media-buying">Media Buying (Ads)</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="brand-identity" name="projectType" value="Brand Identity & Design System">
+                                    <label for="brand-identity">Brand Identity & Design System</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="content-production" name="projectType" value="Content Production (Reels/UGC/Blog)">
+                                    <label for="content-production">Content Production (Reels/UGC/Blog)</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="digital-marketing" name="projectType" value="Digital Marketing">
+                                    <label for="digital-marketing">Digital Marketing</label>
                                 </div>
                                 <div class="checkbox-item">
                                     <input type="checkbox" id="other" name="projectType" value="Other">
                                     <label for="other">Other</label>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>What's Your Business Type *</label>
+                        <div class="checkbox-group" id="businessType">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="ecommerce" name="businessType" value="Ecommerce">
+                                <label for="ecommerce">Ecommerce</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="dentist" name="businessType" value="Dentist">
+                                <label for="dentist">Dentist</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="car-rental" name="businessType" value="Car Rental">
+                                <label for="car-rental">Car Rental</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="real-estate" name="businessType" value="Real Estate">
+                                <label for="real-estate">Real Estate</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="small-business" name="businessType" value="Small Business">
+                                <label for="small-business">Small Business</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="business-other" name="businessType" value="Other">
+                                <label for="business-other">Other</label>
                             </div>
                         </div>
                     </div>
