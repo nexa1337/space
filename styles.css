@@ -2224,10 +2224,12 @@ html.dark-mode .localization-title {
   max-width: 90%;
   width: 90%;
   max-height: 90vh;
-  overflow-y: auto;
+  overflow: hidden;
   box-shadow: 0 20px 60px rgba(106, 121, 250, 0.2);
   position: relative;
   animation: slideUp 0.4s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 @media (min-width: 769px) {
@@ -2259,6 +2261,7 @@ html.dark-mode .popup-modal {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+  z-index: 10;
 }
 
 .popup-close:hover {
@@ -2269,6 +2272,8 @@ html.dark-mode .popup-modal {
 
 .popup-content {
   text-align: center;
+  overflow-y: auto;
+  flex: 1;
 }
 
 .popup-icon {
@@ -2286,18 +2291,15 @@ html.dark-mode .popup-modal {
 
 .popup-modal h2 {
   font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--dark);
   margin-bottom: 1rem;
-  color: var(--dark);
-}
-
-html.dark-mode .popup-modal h2 {
-  color: var(--dark);
 }
 
 .popup-modal p {
   color: var(--gray);
   font-size: 1rem;
-  line-height: 1.6;
+  line-height: 1.8;
   margin-bottom: 2rem;
 }
 
@@ -2311,53 +2313,158 @@ html.dark-mode .popup-modal h2 {
 .popup-link {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
+  gap: 1rem;
   padding: 1rem;
-  background: rgba(106, 121, 250, 0.1);
-  border: 1px solid rgba(106, 121, 250, 0.3);
+  background: var(--light);
   border-radius: 12px;
-  color: var(--primary);
+  color: var(--dark);
   text-decoration: none;
   transition: all 0.3s ease;
   font-weight: 500;
-  font-size: 0.95rem;
-}
-
-html.dark-mode .popup-link {
-  background: rgba(106, 121, 250, 0.2);
-  border-color: rgba(106, 121, 250, 0.5);
-  color: var(--dark);
 }
 
 .popup-link:hover {
-  background: rgba(106, 121, 250, 0.2);
-  border-color: var(--primary);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(106, 121, 250, 0.2);
+  background: rgba(106, 121, 250, 0.1);
+  transform: translateX(5px);
 }
 
 .popup-link i {
-  font-size: 1.2rem;
+  width: 40px;
+  height: 40px;
+  background: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
 }
 
 .popup-cta {
   width: 100%;
+  padding: 1rem;
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
   margin-bottom: 1rem;
 }
 
-.popup-footer {
-  font-size: 0.85rem;
-  color: var(--gray);
-  margin-top: 1rem;
+.popup-cta:hover {
+  background: #5a68e8;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(106, 121, 250, 0.3);
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
+.popup-dont-show {
+  width: 100%;
+  padding: 1rem;
+  background: transparent;
+  color: var(--gray);
+  border: 2px solid var(--gray-light);
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+.popup-dont-show:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-3px);
+}
+
+.popup-footer {
+  color: var(--gray);
+  font-size: 0.9rem;
+  margin-top: 1.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .popup-modal {
+    padding: 1.5rem;
+    max-height: 95vh;
   }
-  to {
-    opacity: 1;
+  
+  .popup-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.8rem;
+  }
+  
+  .popup-modal h2 {
+    font-size: 1.5rem;
+  }
+  
+  .popup-modal p {
+    font-size: 0.95rem;
+  }
+  
+  .popup-link {
+    padding: 0.8rem;
+    font-size: 0.95rem;
+  }
+  
+  .popup-link i {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .popup-cta, .popup-dont-show {
+    padding: 0.8rem;
+    font-size: 0.95rem;
+  }
+  
+  .popup-close {
+    top: 1rem;
+    right: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .popup-modal {
+    padding: 1.25rem;
+    border-radius: 15px;
+  }
+  
+  .popup-content {
+    max-height: 80vh;
+  }
+  
+  .popup-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+  
+  .popup-modal h2 {
+    font-size: 1.3rem;
+  }
+  
+  .popup-modal p {
+    font-size: 0.9rem;
+  }
+  
+  .popup-link {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+  
+  .popup-link i {
+    width: 30px;
+    height: 30px;
+    font-size: 0.9rem;
+  }
+  
+  .popup-cta, .popup-dont-show {
+    padding: 0.75rem;
+    font-size: 0.9rem;
   }
 }
 

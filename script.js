@@ -134,13 +134,19 @@ const popupOverlay = document.getElementById("popupOverlay")
 const popupClose = document.getElementById("popupClose")
 const popupCTA = document.querySelector(".popup-cta")
 const servicesLink = document.getElementById("servicesLink")
+const dontShowAgainBtn = document.getElementById("dontShowAgain")
 
-// Show popup after 3 seconds
-setTimeout(() => {
-  if (popupOverlay) {
-    popupOverlay.classList.add("active")
-  }
-}, 3000)
+// Check if user has chosen not to show popup again
+const shouldShowPopup = localStorage.getItem("dontShowMarketingPopup") !== "true"
+
+// Show popup after 3 seconds if user hasn't opted out
+if (shouldShowPopup) {
+  setTimeout(() => {
+    if (popupOverlay) {
+      popupOverlay.classList.add("active")
+    }
+  }, 3000)
+}
 
 // Close popup on close button click
 if (popupClose) {
@@ -173,6 +179,15 @@ if (popupCTA) {
 // Close popup when clicking services link
 if (servicesLink) {
   servicesLink.addEventListener("click", () => {
+    popupOverlay.classList.remove("active")
+  })
+}
+
+// Handle "Don't show again" button
+if (dontShowAgainBtn) {
+  dontShowAgainBtn.addEventListener("click", () => {
+    // Store user preference in localStorage
+    localStorage.setItem("dontShowMarketingPopup", "true")
     popupOverlay.classList.remove("active")
   })
 }
