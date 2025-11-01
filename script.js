@@ -603,10 +603,52 @@ viewProjectButtons.forEach(button => {
   });
 });
 
+// Add functionality for "What's Included" dropdown
+document.addEventListener('click', function(e) {
+  if (e.target.classList.contains('toggle-included') || e.target.closest('.included-container')) {
+    const container = document.querySelector('.included-container');
+    container.classList.toggle('active');
+  }
+});
+
+// Add functionality for "Buy Via WhatsApp" button
+document.addEventListener('click', function(e) {
+  if (e.target.id === 'buyViaWhatsapp' || e.target.closest('#buyViaWhatsapp')) {
+    // Get project details
+    const projectTitle = document.getElementById('popupTitle').textContent;
+    const projectCategory = document.getElementById('popupCategory').textContent;
+    const projectClient = document.getElementById('popupClient').textContent;
+    
+    // Create WhatsApp message
+    const whatsappMessage = `Hello, I'm interested in purchasing the "${projectTitle}" project.
+    
+Project Details:
+- Category: ${projectCategory}
+- Client: ${projectClient}
+
+Please provide more information about this project and the purchasing process.`;
+    
+    // Encode message for URL
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+    
+    // WhatsApp URL (replace with your actual number)
+    const whatsappUrl = `https://wa.me/+212723242286?text=${encodedMessage}`;
+    
+    // Open WhatsApp in new tab
+    window.open(whatsappUrl, '_blank');
+  }
+});
+
 // Close popup
 projectPopupClose.addEventListener('click', function() {
   projectPopup.classList.remove('active');
   document.body.style.overflow = 'auto'; // Enable scrolling
+  
+  // Reset "What's Included" dropdown
+  const includedContainer = document.querySelector('.included-container');
+  if (includedContainer) {
+    includedContainer.classList.remove('active');
+  }
 });
 
 // Close popup when clicking outside content
@@ -614,6 +656,12 @@ projectPopup.addEventListener('click', function(e) {
   if (e.target === projectPopup) {
     projectPopup.classList.remove('active');
     document.body.style.overflow = 'auto'; // Enable scrolling
+    
+    // Reset "What's Included" dropdown
+    const includedContainer = document.querySelector('.included-container');
+    if (includedContainer) {
+      includedContainer.classList.remove('active');
+    }
   }
 });
 
@@ -653,14 +701,11 @@ contactForm.addEventListener('submit', function(e) {
   const email = document.getElementById('email').value;
   const whatsapp = document.getElementById('whatsapp').value;
   const country = document.getElementById('country').value;
+  const projectType = document.getElementById('projectType').value;
   
-  // Get selected project types
-  const projectTypeCheckboxes = document.querySelectorAll('input[name="projectType"]:checked');
-  const projectTypes = Array.from(projectTypeCheckboxes).map(checkbox => checkbox.value).join(', ');
-  
-  // Validate that at least one project type is selected
-  if (projectTypes === '') {
-    alert('Please select at least one project type.');
+  // Validate that project type is selected
+  if (projectType === '') {
+    alert('Please select a project type.');
     return;
   }
   
@@ -677,7 +722,7 @@ Full Name: ${fullName}
 Email: ${email}
 WhatsApp: ${whatsapp}
 Country: ${country}
-Project Type(s): ${projectTypes}
+Project Type: ${projectType}
 Business Type(s): ${businessTypes}
 Message: ${message}`;
   
