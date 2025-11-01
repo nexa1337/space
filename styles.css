@@ -1121,13 +1121,13 @@ input:checked + .slider:before {
   gap: 1.5rem;
 }
 
-.checkbox-group {
+.checkbox-group, .radio-group {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 1rem;
 }
 
-.checkbox-item {
+.checkbox-item, .radio-item {
   display: flex;
   align-items: center;
   gap: 0.75rem;
@@ -1138,19 +1138,19 @@ input:checked + .slider:before {
   cursor: pointer;
 }
 
-.checkbox-item:hover {
+.checkbox-item:hover, .radio-item:hover {
   border-color: var(--primary);
   background: rgba(106, 121, 250, 0.05);
 }
 
-.checkbox-item input[type="checkbox"] {
+.checkbox-item input[type="checkbox"], .radio-item input[type="radio"] {
   width: 20px;
   height: 20px;
   accent-color: var(--primary);
   cursor: pointer;
 }
 
-.checkbox-item label {
+.checkbox-item label, .radio-item label {
   margin-bottom: 0;
   font-weight: normal;
   cursor: pointer;
@@ -1158,7 +1158,7 @@ input:checked + .slider:before {
   font-size: 0.95rem;
 }
 
-.checkbox-item input[type="checkbox"]:checked + label {
+.checkbox-item input[type="checkbox"]:checked + label, .radio-item input[type="radio"]:checked + label {
   font-weight: 600;
 }
 
@@ -3663,6 +3663,71 @@ html.dark-mode .scroll-to-top:hover {
   .project-title {
     font-size: 1.2rem;
   }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1.25rem;
+  }
+  
+  .project-popup {
+    width: 95%;
+  }
+  
+  .project-popup-content {
+    padding: 1.5rem;
+  }
+  
+  .project-popup-image img {
+    height: 250px;
+    object-fit: cover;
+  }
+  
+  .project-popup-title {
+    font-size: 1.5rem;
+  }
+  
+  .project-popup-meta {
+    grid-template-columns: 1fr;
+  }
+  
+  .project-popup-actions {
+    flex-direction: column;
+  }
+  
+  .project-popup-actions .btn {
+    width: 100%;
+  }
+  
+  .project-popup-thumbnails img {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .checkbox-group, .radio-group {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  
+  .checkbox-item, .radio-item {
+    gap: 0.75rem;
+  }
+  
+  .checkbox-item input[type="checkbox"], .radio-item input[type="radio"] {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .contact-popup-content {
+    padding: 1.5rem;
+  }
+  
+  .contact-popup-header h3 {
+    font-size: 1.5rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -3733,5 +3798,8 @@ html.dark-mode .scroll-to-top:hover {
   .form-row {
     gap: 0.75rem;
   }
+  
+  .checkbox-group, .radio-group {
+    grid-template-columns: 1fr;
+  }
 }
-

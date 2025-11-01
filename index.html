@@ -1076,71 +1076,100 @@
                             <input type="text" id="country" class="form-control" placeholder="Enter your country" required>
                         </div>
                         <div class="form-group">
-                            <label for="projectType"><i class="fas fa-tasks"></i> Project Type *</label>
-                            <select id="projectType" class="form-control" required>
-                                <option value="">Select a project type</option>
-                                <option value="AI Chatbots & Assistants">AI Chatbots & Assistants</option>
-                                <option value="Workflow Automation & AI Agents">Workflow Automation & AI Agents</option>
-                                <option value="Custom Websites">Custom Websites</option>
-                                <option value="Landing Pages & CRD">Landing Pages & CRD</option>
-                                <option value="Social Media Management">Social Media Management</option>
-                                <option value="Media Buying (Ads)">Media Buying (Ads)</option>
-                                <option value="Brand Identity & Design System">Brand Identity & Design System</option>
-                                <option value="Content Production (Reels/UGC/Blog)">Content Production (Reels/UGC/Blog)</option>
-                                <option value="Digital Marketing">Digital Marketing</option>
-                                <option value="Other">Other</option>
-                            </select>
+                            <label><i class="fas fa-concierge-bell"></i> Services Type *</label>
+                            <div class="checkbox-group" id="projectType">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="ai-chatbots" name="projectType" value="AI Chatbots & Assistants">
+                                    <label for="ai-chatbots">AI Chatbots & Assistants</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="workflow-automation" name="projectType" value="Workflow Automation & AI Agents">
+                                    <label for="workflow-automation">Workflow Automation & AI Agents</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="custom-websites" name="projectType" value="Custom Websites">
+                                    <label for="custom-websites">Custom Websites</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="landing-pages" name="projectType" value="Landing Pages & CRD">
+                                    <label for="landing-pages">Landing Pages & CRD</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="social-media" name="projectType" value="Social Media Management">
+                                    <label for="social-media">Social Media Management</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="media-buying" name="projectType" value="Media Buying (Ads)">
+                                    <label for="media-buying">Media Buying (Ads)</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="brand-identity" name="projectType" value="Brand Identity & Design System">
+                                    <label for="brand-identity">Brand Identity & Design System</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="content-production" name="projectType" value="Content Production (Reels/UGC/Blog)">
+                                    <label for="content-production">Content Production (Reels/UGC/Blog)</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="digital-marketing" name="projectType" value="Digital Marketing">
+                                    <label for="digital-marketing">Digital Marketing</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="other" name="projectType" value="Other">
+                                    <label for="other">Other</label>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label><i class="fas fa-building"></i> What's Your Business Type *</label>
-                        <div class="checkbox-group" id="businessType">
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="restaurants" name="businessType" value="Restaurants 🍔 / Cafes ☕">
+                        <div class="radio-group" id="businessType">
+                            <div class="radio-item">
+                                <input type="radio" id="restaurants" name="businessType" value="Restaurants 🍔 / Cafes ☕" required>
                                 <label for="restaurants">Restaurants 🍔 / Cafes ☕</label>
                             </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="beauty" name="businessType" value="Beauty Salons 💅 / Hairdressers ✂️">
+                            <div class="radio-item">
+                                <input type="radio" id="beauty" name="businessType" value="Beauty Salons 💅 / Hairdressers ✂️">
                                 <label for="beauty">Beauty Salons 💅 / Hairdressers ✂️</label>
                             </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="gym" name="businessType" value="Gyms & Fitness 🏋️">
+                            <div class="radio-item">
+                                <input type="radio" id="gym" name="businessType" value="Gyms & Fitness 🏋️">
                                 <label for="gym">Gyms & Fitness 🏋️</label>
                             </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="car-rental" name="businessType" value="Car Rentals 🚗">
+                            <div class="radio-item">
+                                <input type="radio" id="car-rental" name="businessType" value="Car Rentals 🚗">
                                 <label for="car-rental">Car Rentals 🚗</label>
                             </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="doctors" name="businessType" value="Doctors / Clinics 🏥">
+                            <div class="radio-item">
+                                <input type="radio" id="doctors" name="businessType" value="Doctors / Clinics 🏥">
                                 <label for="doctors">Doctors / Clinics 🏥</label>
                             </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="real-estate" name="businessType" value="Real Estate 🏘️">
+                            <div class="radio-item">
+                                <input type="radio" id="real-estate" name="businessType" value="Real Estate 🏘️">
                                 <label for="real-estate">Real Estate 🏘️</label>
                             </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="stores" name="businessType" value="Local Stores / Boutiques 🛍️">
+                            <div class="radio-item">
+                                <input type="radio" id="stores" name="businessType" value="Local Stores / Boutiques 🛍️">
                                 <label for="stores">Local Stores / Boutiques 🛍️</label>
                             </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="ecommerce" name="businessType" value="Ecommerce Brands">
+                            <div class="radio-item">
+                                <input type="radio" id="ecommerce" name="businessType" value="Ecommerce Brands">
                                 <label for="ecommerce">Ecommerce Brands</label>
                             </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="dropshipping" name="businessType" value="Dropshipping Stores">
+                            <div class="radio-item">
+                                <input type="radio" id="dropshipping" name="businessType" value="Dropshipping Stores">
                                 <label for="dropshipping">Dropshipping Stores</label>
                             </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="logistics" name="businessType" value="Logistics / Transport">
+                            <div class="radio-item">
+                                <input type="radio" id="logistics" name="businessType" value="Logistics / Transport">
                                 <label for="logistics">Logistics / Transport</label>
                             </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="architect" name="businessType" value="Architect / Interior Design">
+                            <div class="radio-item">
+                                <input type="radio" id="architect" name="businessType" value="Architect / Interior Design">
                                 <label for="architect">Architect / Interior Design</label>
                             </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="business-other" name="businessType" value="Others">
+                            <div class="radio-item">
+                                <input type="radio" id="business-other" name="businessType" value="Others">
                                 <label for="business-other">Others</label>
                             </div>
                         </div>

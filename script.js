@@ -701,17 +701,26 @@ contactForm.addEventListener('submit', function(e) {
   const email = document.getElementById('email').value;
   const whatsapp = document.getElementById('whatsapp').value;
   const country = document.getElementById('country').value;
-  const projectType = document.getElementById('projectType').value;
   
-  // Validate that project type is selected
-  if (projectType === '') {
-    alert('Please select a project type.');
+  // Get selected project types
+  const projectTypeCheckboxes = document.querySelectorAll('input[name="projectType"]:checked');
+  const projectTypes = Array.from(projectTypeCheckboxes).map(checkbox => checkbox.value).join(', ');
+  
+  // Validate that at least one project type is selected
+  if (projectTypes === '') {
+    alert('Please select at least one project type.');
     return;
   }
   
-  // Get selected business types
-  const businessTypeCheckboxes = document.querySelectorAll('input[name="businessType"]:checked');
-  const businessTypes = Array.from(businessTypeCheckboxes).map(checkbox => checkbox.value).join(', ');
+  // Get selected business type
+  const businessTypeRadio = document.querySelector('input[name="businessType"]:checked');
+  const businessType = businessTypeRadio ? businessTypeRadio.value : '';
+  
+  // Validate that business type is selected
+  if (businessType === '') {
+    alert('Please select your business type.');
+    return;
+  }
   
   const message = document.getElementById('message').value;
   
@@ -722,8 +731,8 @@ Full Name: ${fullName}
 Email: ${email}
 WhatsApp: ${whatsapp}
 Country: ${country}
-Project Type: ${projectType}
-Business Type(s): ${businessTypes}
+Services Type(s): ${projectTypes}
+Business Type: ${businessType}
 Message: ${message}`;
   
   // Encode message for URL
