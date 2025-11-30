@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
 	<meta name="p:domain_verify" content="89a4a3374c029e6d06ef97f952e80f44"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 	<!-- Place favicon.ico in the root directory -->
         <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <title>NEXA1337 - Digital Agency</title>
@@ -45,11 +45,6 @@ src="https://www.facebook.com/tr?id=813892528237820&ev=PageView&noscript=1"
     <nav class="navbar">
         <div class="container">
             <div class="nav-content">
-                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
                 <div id="about" class="logo">N E X A <span style="color:#6a79fa;">1337</span></div>
                 <div class="nav-links">
                     <a href="#about">About</a>
@@ -58,9 +53,16 @@ src="https://www.facebook.com/tr?id=813892528237820&ev=PageView&noscript=1"
                     <a href="#pricing">Pricing</a>
                     <a href="#contact">Contact</a>
                 </div>
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-                    <i class="fas fa-moon"></i>
-                </button>
+                <div class="nav-right">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
             </div>
             <div class="mobile-menu" id="mobileMenu">
                     <a href="#about">About</a>
@@ -68,11 +70,6 @@ src="https://www.facebook.com/tr?id=813892528237820&ev=PageView&noscript=1"
                     <a href="#projects">Projects</a>
                     <a href="#pricing">Pricing</a>
                     <a href="#contact">Contact</a>
-                    <div class="mobile-theme-toggle-container">
-                        <button class="theme-toggle mobile-theme-toggle" id="mobileThemeToggle" aria-label="Toggle dark mode">
-                            <i class="fas fa-moon"></i>
-                        </button>
-                    </div>
                 </div>
         </div>
     </nav>
@@ -1212,6 +1209,26 @@ src="https://www.facebook.com/tr?id=813892528237820&ev=PageView&noscript=1"
     <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
         <i class="fas fa-arrow-up"></i>
     </button>
+    <!-- Bottom Navigation Bar -->
+    <div class="bottom-nav">
+        <a href="#home" class="bottom-nav-item active">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="#services" class="bottom-nav-item">
+            <i class="fas fa-concierge-bell"></i>
+            <span>Services</span>
+        </a>
+        <a href="#projects" class="bottom-nav-item">
+            <i class="fas fa-briefcase"></i>
+            <span>Projects</span>
+        </a>
+        <a href="#contact" class="bottom-nav-item">
+            <i class="fas fa-envelope"></i>
+            <span>Contact</span>
+        </a>
+    </div>
+
 <script src='https://cdn.jotfor.ms/agent/embedjs/01991b38e30e7835855131b33a7e371a6d59/embed.js'>
 </script>
     <script src="script.js"></script>
