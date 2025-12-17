@@ -103,10 +103,31 @@ if (mobileThemeToggle) {
   mobileThemeToggle.addEventListener("click", toggleTheme)
 }
 
-// No changes are needed for the script.js file since the existing JavaScript code
-// for the mobile menu toggle is already compatible with the new HTML structure.
-// The existing logic correctly toggles the 'active' class on the mobile menu
-// and the hamburger icon, which is consistent with the updated CSS.
+/* Updated mobile menu toggle with proper hamburger animation */
+const mobileMenuToggle = document.getElementById("mobileMenuToggle")
+const mobileMenu = document.getElementById("mobileMenu")
+
+if (mobileMenuToggle && mobileMenu) {
+  mobileMenuToggle.addEventListener("click", (e) => {
+    e.stopPropagation()
+    mobileMenuToggle.classList.toggle("active")
+    mobileMenu.classList.toggle("active")
+  })
+
+  document.querySelectorAll(".mobile-menu a").forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileMenuToggle.classList.remove("active")
+      mobileMenu.classList.remove("active")
+    })
+  })
+
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest(".navbar")) {
+      mobileMenuToggle.classList.remove("active")
+      mobileMenu.classList.remove("active")
+    }
+  })
+}
 
 /* Updated popup modal functionality with services link handler */
 const popupOverlay = document.getElementById("popupOverlay")
